@@ -1,0 +1,137 @@
+<?php     $collection   = $this->collectionSelect ($_GET[swefcms_get_uuid]); ?>
+<?php     $collections  = $this->identifyCollections ($_GET[swefcms_get_uuid]); ?>
+
+
+  <form id="swefcms-form-collection" method="post" action="">
+    <input type="hidden" name="swefcms-collection" value="1" />
+
+    <h3>
+      <?php echo htmlentities ($collection[swefcms_col_title]); ?>
+      [<a href="?c=\Swef\SwefCMS&amp;o=item&amp;u=<?php echo htmlentities ($_GET[swefcms_get_uuid]); ?>"><t en>edit items</t></a>]
+    </h3>
+
+    <div class="input">
+      <label for=""><t en>Created</t>:</label>
+      <span><?php echo htmlentities ($collection[swefcms_col_created]); ?></span>
+    </div>
+    <div class="input">
+      <label for=""><t en>Created by</t>:</label>
+      <span><?php echo htmlentities ($collection[swefcms_col_creator]); ?></span>
+    </div>
+    <div class="input">
+      <label for=""><t en>Status</t>:</label>
+<?php     if ($collection[swefcms_col_active]): ?>
+      <span><t en>Enabled</t></span>
+<?php     else: ?>
+      <span class="inactive"><t en>Disabled</t></span>
+<?php     endif; ?>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th><t en>Context</t></th>
+          <th><t en>User group</t></th>
+          <th><t en>May create</t></th>
+          <th><t en>May update</t></th>
+          <th><t en>May delete</t></th>
+          <th><t en>Change</t></th>
+        </tr>
+      </thead>
+      <tbody class="list">
+<?php     foreach ($collections as $coll): ?>
+        <tr>
+          <td>
+            <?php echo htmlentities ($coll[SWEF_COL_CONTEXT]); ?>
+          </td>
+          <td>
+            <?php echo htmlentities ($coll[SWEF_COL_USERGROUP]); ?>
+          </td>
+          <td>
+            <input type="checkbox"
+              name="swefcms-may-create-<?php echo htmlentities ($coll[swefcms_col_item_uuid]); ?>"
+              value="1"
+<?php         if($coll[swefcms_col_may_create]): ?>
+              checked="checked"
+<?php         endif; ?>
+<?php         if(!$coll[swefcms_col_may_grant]): ?>
+<?php         endif; ?>
+              />
+          </td>
+          <td>
+            <input type="checkbox"
+              name="swefcms-may-update-<?php echo htmlentities ($coll[swefcms_col_item_uuid]); ?>"
+              value="1"
+<?php         if($coll[swefcms_col_may_update]): ?>
+              checked="checked"
+<?php         endif; ?>
+<?php         if(!$coll[swefcms_col_may_grant]): ?>
+<?php         endif; ?>
+              />
+          </td>
+          <td>
+            <input type="checkbox"
+              name="swefcms-may-delete-<?php echo htmlentities ($coll[swefcms_col_item_uuid]); ?>"
+              value="1"
+<?php         if($coll[swefcms_col_may_delete]): ?>
+              checked="checked"
+<?php         endif; ?>
+<?php         if(!$coll[swefcms_col_may_grant]): ?>
+<?php         endif; ?>
+              />
+          </td>
+          <td>
+            <input type="submit" value="<t en>Change</t>"
+<?php         if(!$coll[swefcms_col_may_grant]): ?>
+<?php         endif; ?>
+              />
+          </td>
+        </tr>
+<?php    endforeach; ?>
+      </tbody>
+<?php         if($coll[swefcms_col_may_grant]): ?>
+      <tfoot>
+        <tr>
+          <td>
+            <select name="swefcms-collection-context"
+<?php         if(!$coll[swefcms_col_may_grant]): ?>
+<?php         endif; ?>
+              >
+              <option value="">Context:</option>
+<?php         foreach($this->page->swef->contexts as $c): ?>
+              <option value="<?php echo htmlentities (SWEF_COL_USERGROUP); ?>"><?php echo htmlentities ($c[SWEF_COL_CONTEXT]); ?></option>
+<?php         endforeach; ?>
+            </select>
+          </td>
+          <td>
+            <select name="swefcms-collection-usergroup"
+<?php         if(!$coll[swefcms_col_may_grant]): ?>
+<?php         endif; ?>
+              >
+              <option value=""><t en>User group</t>:</option>
+<?php         foreach($this->page->swef->usergroups as $u): ?>
+              <option value="<?php echo htmlentities ($u[SWEF_COL_USERGROUP]); ?>"><t en><?php echo htmlentities ($u[SWEF_COL_USERGROUP_NAME]); ?></t></option>
+<?php         endforeach; ?>
+            </select>
+          </td>
+          <td>
+            <input type="submit" name="swefcms-collection-add" value="Add"
+<?php         if(!$coll[swefcms_col_may_grant]): ?>
+<?php         endif; ?>
+              />
+          </td>
+          <td>
+            &nbsp;
+          </td>
+          <td>
+            &nbsp;
+          </td>
+          <td>
+            &nbsp;
+          </td>
+        </tr>
+      </tfoot>
+<?php     endif; ?>
+    </table>
+
+  </form>

@@ -1,0 +1,404 @@
+
+.dashboard form pre.swefcms-markdown-preview {
+    display:                inline-block;
+    white-space:            pre-wrap;
+    width:                  50vw;
+    border-style:           solid;
+    border-width:           1px;
+    padding:                0.5vw 1em 0.5vw 1em;
+    font-size:              0.8em;
+}
+
+.dashboard .swefcms-editor {
+    position:               fixed;
+    left:                   0;
+    top:                    0;
+    box-sizing:             border-box;
+    width:                  100vw;
+    height:                 100vh;
+    margin:                 0;
+    background-color:       #eeeeff;
+    overflow-x:             hidden;
+    overflow-y:             hidden;
+}
+
+.dashboard .swefcms-editor .toolbar {
+    position:               absolute;
+    z-index:                2;
+    left:                   2vw;
+    top:                    2vh;
+    box-sizing:             border-box;
+    width:                  96vw;
+    min-height:             4em;
+    height:                 8vh;
+    overflow-x:             hidden;
+    overflow-y:             hidden;
+    border-style:           solid;
+    border-width:           2px;
+    border-color:           #000000;
+    background-color:       #ffffff;
+    padding:                2vh 1vw 2vh 1vw;
+}
+
+.dashboard .swefcms-editor .toolbar .pane-io {
+    float:                  left;
+}
+
+.dashboard .swefcms-editor .toolbar .pane-iface {
+    float:                  right;
+}
+
+.dashboard .swefcms-editor .toolbar .pane-console {
+    display:                inline-block;
+    margin:                 0 0 0 2em;
+    width:                  28vw;
+    border-style:           solid;
+    border-width:           2px;
+    border-color:           #aaaaaa #666666 #555555 #aaaaaa;
+    background-color:       #eeeeee;
+    padding:                0.15em;
+    text-align:             center;
+    font-size:              0.8em;
+    cursor:                 help;
+}
+
+.dashboard .swefcms-editor #swefcms-title-input {
+    position:               absolute;
+    z-index:                10;
+    left:                   2vw;
+    top:                    12vh;
+    box-sizing:             border-box;
+    margin:                 0;
+    width:                  47vw;
+    min-height:             2em;
+    height:                 5vh;
+    border-style:           solid;
+    border-width:           2px;
+    border-color:           #000000;
+    overflow-x:             hidden;
+    overflow-y:             scroll;
+    padding:                0 1vw 0 1vw;
+    background-color:       #ffffe7;
+    white-space:            pre-wrap;
+    font-size:              1.6em;
+    font-weight:            bold;
+}
+
+.dashboard .swefcms-editor #swefcms-item-title {
+    font-weight:           bold;
+}
+
+.dashboard .swefcms-editor #swefcms-item-title.inactive {
+    text-decoration:        line-through;
+}
+
+.dashboard .swefcms-editor > h1#swefcms-title {
+    display:                block;
+    position:               absolute;
+    z-index:                1;
+    left:                   51vw;
+    top:                    12vh;
+    box-sizing:             border-box;
+    width:                  47vw;
+    min-height:             1.55em;
+    height:                 5vh;
+    margin:                 0;
+    border-style:           solid;
+    border-width:           2px;
+    border-color:           #000000;
+    background-color:       #ffffff;
+    padding:                0 1vw 0 1vw;
+    overflow-x:             hidden;
+    overflow-y:             hidden;
+    font-size:              2em;
+}
+
+.dashboard .swefcms-editor .swefcms-markdown {
+    position:               absolute;
+    z-index:                1;
+    left:                   2vw;
+    top:                    19vh;
+    box-sizing:             border-box;
+    width:                  47vw;
+    height:                 78.5vh;
+    border-style:           solid;
+    border-width:           2px;
+    border-color:           #000000;
+    background-color:       #ffffff;
+    padding:                0;
+    overflow-x:             hidden;
+    overflow-y:             hidden;
+}
+
+.dashboard .swefcms-editor #swefcms-markdown {
+    position:               absolute;
+    z-index:                2;
+    left:                   1vw;
+    top:                    1.5vh;
+    box-sizing:             border-box;
+    margin:                 0;
+    width:                  45vw;
+    height:                 75vh;
+    overflow-x:             hidden;
+    overflow-y:             scroll;
+    border-style:           none;
+    padding:                0;
+    background-color:       #ffffe7;
+    white-space:            pre-wrap;
+    font-size:              0.95em;
+}
+
+.dashboard .swefcms-editor #swefcms-markup {
+    position:               absolute;
+    z-index:                1;
+    left:                   51vw;
+    top:                    19vh;
+    box-sizing:             border-box;
+    width:                  47vw;
+    height:                 78.5vh;
+    margin:                 0;
+    border-style:           solid;
+    border-width:           2px;
+    border-color:           #000000;
+    background-color:       #ffffff;
+    padding:                1vh 1vw 2vh 1vw;
+    overflow-x:             hidden;
+    overflow-y:             scroll;
+}
+
+.dashboard .swefcms-editor .unsaved {
+    background-color:       #fff3f3 !important;
+}
+
+.dashboard .swefcms-editor #swefcms-markup small {
+    font-size:              0.85em;
+    text-align:             justify;
+    color:                  #666666;
+}
+
+.dashboard .swefcms-editor #swefcms-markup q {
+    display:                block;
+    margin:                 0.2em 3.5em 0.21em 6em;
+    background-color:       #f7f7f7;
+    padding:                0.2em 0.4em 0.2em 0.4em;
+    text-align:             justify;
+    font-style:             italic;
+}
+
+.dashboard .swefcms-editor #swefcms-markup cite {
+    display:                inline-block;
+    margin:                 0.2em 3.5em 1em 6.7em;
+    padding:                0;
+    font-style:             italic;
+}
+
+.dashboard .swefcms-editor h1#swefcms-title {
+    font-size:              2.1em;
+}
+
+.dashboard .swefcms-editor #swefcms-markup h1 {
+    font-size:              2em;
+    margin:                 0.3em 0.5em 0.3em 0;
+    padding:                0;
+}
+
+.dashboard .swefcms-editor #swefcms-markup h2 {
+    font-size:              1.8em;
+    margin:                 0.3em 0.5em 0.3em 0.3em;
+    padding:                0;
+}
+
+.dashboard .swefcms-editor #swefcms-markup h3 {
+    font-size:              1.6em;
+    margin:                 0.3em 0.5em 0.3em 0.65em;
+    padding:                0;
+}
+
+.dashboard .swefcms-editor #swefcms-markup h4 {
+    font-size:              1.4em;
+    margin:                 0.25em 0.5em 0.25em 1.1em;
+    padding:                0;
+}
+
+.dashboard .swefcms-editor #swefcms-markup h5 {
+    font-size:              1.3em;
+    margin:                 0.2em 0.5em 0.2em 1.5em;
+    padding:                0;
+}
+
+.dashboard .swefcms-editor #swefcms-markup h6 {
+    font-size:              1.2em;
+    margin:                 0.15em 0.5em 0.15em 2em;
+    padding:                0;
+}
+
+.dashboard .swefcms-editor #swefcms-markup div {
+    margin:                 0;
+    padding:                0;
+}
+
+.dashboard .swefcms-editor #swefcms-markup p {
+    font-size:              1em;
+    margin:                 0.3em 0.5em 0.5em 2.8em;
+    padding:                0;
+    text-align:             justify;
+    line-height:            1.1em;
+}
+
+.dashboard .swefcms-editor #swefcms-markup .hr-1 {
+    height:                 2px;
+    background-color:       #000000;
+}
+
+.dashboard .swefcms-editor #swefcms-markup .hr-2 {
+    height:                 1px;
+    background-color:       #666666;
+}
+
+.dashboard .swefcms-editor #swefcms-markup .labelled-item {
+    font-size:              1em;
+    margin:                 0 0.5em 0 2.8em;
+    padding:                0;
+}
+
+.dashboard .swefcms-editor #swefcms-markup .label-1 {
+    width:                  5em;
+}
+
+.dashboard .swefcms-editor #swefcms-markup .label-2 {
+    width:                  10em;
+}
+
+.dashboard .swefcms-editor #swefcms-markup .label-3 {
+    width:                  15em;
+}
+
+.dashboard .swefcms-editor #swefcms-markup .label-4 {
+    width:                  20em;
+}
+
+.dashboard .swefcms-editor #swefcms-markup .label-5 {
+    width:                  25em;
+}
+
+.dashboard .swefcms-editor #swefcms-markup .label-6 {
+    width:                  30em;
+}
+
+.dashboard .swefcms-editor #swefcms-markup table {
+    margin:                 0.15em 5em 2em 5em;
+    border-style:           solid;
+    border-width:           1px;
+    border-color:           #666666;
+}
+
+.dashboard .swefcms-editor #swefcms-markup table tr:nth-child(odd) {
+    background-color:       rgba(220,220,220,0.3);
+}
+
+.dashboard .swefcms-editor #swefcms-markup tr:nth-child(even) {
+    background-color:       rgba(220,220,220,0.1);
+}
+
+.dashboard .swefcms-editor #swefcms-markup td {
+    padding:                0.1em 1em 0.1em 1em;
+}
+
+.dashboard .swefcms-editor #swefcms-markup td.left {
+    text-align:             left;
+}
+
+.dashboard .swefcms-editor #swefcms-markup td.center {
+    text-align:             center;
+}
+
+.dashboard .swefcms-editor #swefcms-markup td.right {
+    text-align:             right;
+}
+
+.dashboard .swefcms-editor #swefcms-markup figure {
+    display:                inline-block;
+    margin:                 0 5em 0 5em;
+}
+
+.dashboard .swefcms-editor #swefcms-markup figure.image {
+    padding:                0 1em 0 1em;
+    border-style:           solid;
+    border-width:           1px;
+    border-color:           #660066;
+}
+
+.dashboard .swefcms-editor #swefcms-markup figure.image img {
+    display:                block;
+    margin:                 1em auto 1em auto;
+}
+
+.dashboard .swefcms-editor #swefcms-markup figure.audio audio {
+    display:                block;
+    margin:                 1em auto 1em auto;
+}
+
+.dashboard .swefcms-editor #swefcms-markup figure.video video {
+    display:                block;
+    margin:                 1em auto 1em auto;
+}
+
+.dashboard .swefcms-editor #swefcms-markup figure figcaption {
+    display:                block;
+    text-align:             center;
+}
+
+.dashboard .swefcms-editor #swefcms-markup figure.image figcaption {
+    margin:                 0 -1em 0 -1em;
+    background-color:       #dddddd;
+}
+
+
+/* Resources can be styled by pasing a class name */
+
+.dashboard .swefcms-editor #swefcms-markup figure.eg-image-class {
+}
+
+.dashboard .swefcms-editor #swefcms-markup figure.eg-image-class img {
+}
+
+.dashboard .swefcms-editor #swefcms-markup figure.eg-image-class figcaption {
+}
+
+.dashboard .swefcms-editor #swefcms-markup figure.eg-audio-class {
+}
+
+.dashboard .swefcms-editor #swefcms-markup figure.eg-audio-class audio {
+}
+
+.dashboard .swefcms-editor #swefcms-markup figure.eg-audio-class figcaption {
+}
+
+.dashboard .swefcms-editor #swefcms-markup figure.eg-video-class {
+}
+
+.dashboard .swefcms-editor #swefcms-markup figure.eg-video-class video {
+}
+
+.dashboard .swefcms-editor #swefcms-markup figure.eg-video-class figcaption {
+}
+
+
+/*
+.Container
+{
+    width: 200px;
+    overflow-y: auto;
+}
+.Content
+{
+    width: 300px;
+}
+
+.Flipped, .Flipped .Content
+{
+    transform:rotateX(180deg);
+    -ms-transform:rotateX(180deg); // IE 9
+    -webkit-transform:rotateX(180deg); // Safari and Chrome
+}
+*/

@@ -1,0 +1,26 @@
+
+<?php $this->dashboardLoad (); ?>
+
+<?php $option = $this->dashboardOption; ?>
+
+<?php $select = swefcms_dashboard_options_select; ?>
+
+<div id="swefcms-dash" class="plugin plugin-dash">
+
+  <h2><t en>Dashboard for SwefCMS</t></h2>
+
+  <form class="options" method="get" action="">
+    <input type="hidden" name="<?php echo htmlentities (SWEF_GET_CLASSNAME); ?>" value="\Swef\SwefCMS" />
+    <input type="hidden" name="<?php echo htmlentities (swefcms_get_uuid); ?>" value="<?php echo htmlentities ($this->page->_GET(swefcms_get_uuid)); ?>"/>
+    <input type="hidden" name="<?php echo htmlentities (swefcms_get_language); ?>" value="<?php echo htmlentities ($this->page->_GET(swefcms_get_language)); ?>" />
+<?php $this->page->pull ('global.form.select.auto_submit',SWEF_GET_OPTION,$option,'options',$select,'language','en'); ?>
+  </form>
+
+<?php if($option=='inspect'): ?>
+  <pre>$this->properties = <?php print_r ($this->properties); ?></pre>
+<?php else: ?>
+<?php     $this->dashboardOption ($option); ?>
+<?php endif; ?>
+
+</div>
+

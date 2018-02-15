@@ -1,0 +1,115 @@
+
+  <form id="swefcms-form-editor" method="post" action="">
+
+    <div class="swefcms-editor">
+
+<?php if (!$this->item): ?>
+
+      <div class="toolbar">
+
+        <span class="pane-io">
+
+          <a class="button" href="?c=\Swef\SwefCMS&amp;o=collections"><t en>Collections</t></a>
+
+        </span>
+
+      </div>
+
+<?php else: ?>
+
+      <input type="hidden" name="item_uuid" value="<?php echo htmlentities($this->item[swefcms_col_item_uuid]); ?>" />
+
+      <div class="toolbar">
+
+        <span class="pane-io">
+
+<?php   if($this->markdown[swefcms_col_editor_uuid]): ?>
+
+          <button type="button" id="swefcms-button-check-out" class="button" data-action="checkin" data-next-value="<t en>Check out</t>"><t en>Check in</t></button>
+<?php   else: ?>
+
+          <button type="button" id="swefcms-button-check-out" class="button" data-action="checkout" data-next-value="<t en>Check in</t>"><t en>Check out</t></button>
+<?php endif; ?>
+
+          <select id="swef-cms-select-language">
+<?php foreach($this->markdown[SWEF_COL_LANGUAGES] as $lng): ?>
+
+            <option value="?c=\Swef\SwefCMS&amp;o=markdown&amp;u=<?php echo htmlentities($_GET[swefcms_get_uuid]); ?>&amp;l=<?php echo htmlentities ($lng); ?>"
+<?php if($lng==$this->markdown[SWEF_COL_LANGUAGE]): ?>
+              selected="selected"
+<?php endif; ?>
+            ><?php echo htmlentities ($lng); ?></option>
+<?php endforeach; ?>
+
+          </select>
+
+          <select id="swef-cms-select-version">
+<?php foreach($this->markdown[swefcms_col_versions] as $vn): ?>
+
+            <option value="?c=\Swef\SwefCMS&amp;o=markdown&amp;u=<?php echo htmlentities($_GET[swefcms_get_uuid]); ?>&amp;l=<?php echo htmlentities ($_GET[swefcms_get_language]); ?>); ?>&amp;v=<?php echo htmlentities ($vn); ?>"
+<?php if($vn==$this->markdown[swefcms_col_version]): ?>
+              selected="selected"
+<?php endif; ?>
+            ><t en>Version</t> <?php echo htmlentities ($vn); ?></option>
+<?php endforeach; ?>
+
+          </select>
+
+          <input type="submit" id="swefcms-markdown-save" class="button" name="swefcms-markdown-save" value="<t en>Save</t>" />
+
+          <a class="button" href="?c=\Swef\SwefCMS&amp;o=itemImport&u=<?php echo htmlentities($_GET[swefcms_get_uuid]); ?>"><t en>Import</t></a>
+
+          <a class="button" href="?c=\Swef\SwefCMS&amp;o=itemImport&u=<?php echo htmlentities($_GET[swefcms_get_uuid]); ?>"><t en>Export</t></a>
+
+          <a class="button" href="?c=\Swef\SwefCMS&amp;o=item&u=<?php echo htmlentities($_GET[swefcms_get_uuid]); ?>"><t en>Quit</t></a>
+
+        </span>
+
+        <span id="swefcms-console" class="pane-console"></span>
+
+        <span class="pane-iface">
+
+          <button id="swefcms-button-rendered" class="button">HTML</button>
+
+          <button id="swefcms-button-source" class="button">&lt;<t en>Source</t>&gt;</button>
+
+        </span>
+
+      </div>
+
+      <input id="swefcms-title-input"
+        name="swefcms-title"
+        type="text"
+        value="<?php echo htmlentities ($this->markdown[swefcms_col_title]); ?>"
+<?php if($this->markdown[swefcms_col_editor_uuid]!=$this->page->swef->user->uuid): ?>
+
+        disabled="disabled"
+<?php endif; ?>
+
+      />
+
+      <div class="swefcms-markdown">
+
+        <textarea
+          id="swefcms-markdown"
+          name="swefcms-markdown"
+<?php if($this->markdown[swefcms_col_editor_uuid]!=$this->page->swef->user->uuid): ?>
+
+          disabled="disabled"
+<?php endif; ?>
+
+        ><?php echo htmlentities ($this->markdown[swefcms_col_markdown]); ?><?php print_r($this->markdown); ?></textarea>
+
+      </div>
+
+
+      <h1 id="swefcms-title"><?php echo htmlentities ($this->markdown[swefcms_col_title]); ?></h1>
+
+      <div id="swefcms-markup"></div>
+
+<?php endif; ?>
+
+    </div>
+
+  </form>
+

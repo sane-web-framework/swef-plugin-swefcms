@@ -1,0 +1,11 @@
+<?php
+
+// Configurable constants
+define ( 'swefcms_markdown_parse_lines_max',        1024                                        );
+define ( 'swefcms_markdown_preview_chars',          256                                         );
+define ( 'swefcms_get_uuid',                        'u'                                         );
+define ( 'swefcms_get_language',                    'l'                                         );
+define ( 'swefcms_get_version',                     'v'                                         );
+define ( 'swefcms_default_title',                   'Untitled'                                  );
+
+?>
