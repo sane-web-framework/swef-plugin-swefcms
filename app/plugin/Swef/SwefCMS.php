@@ -27,8 +27,6 @@ class SwefCMS extends \Swef\Bespoke\Plugin {
 */
 
     public function __construct ($page) {
-        // Get definitions
-        require_once SWEF_CONFIG_PATH.'/Swef/SwefCMS.define.php';
         // Always construct the base class - PHP does not do this implicitly
         parent::__construct ($page,'\Swef\SwefCMS');
     }
