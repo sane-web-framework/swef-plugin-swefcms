@@ -1,8 +1,8 @@
 
-swef-core
----------
+swef-plugin-swefcms
+-------------------
 
-swef-core is a component project of sane-web-framework (Swef).
+swef-plugin-swefcms is a component project of sane-web-framework (Swef).
 
 
 Getting started
