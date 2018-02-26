@@ -98,4 +98,5 @@ define ( 'swefcms_file_option_collection',          SWEF_DIR_PLUGIN.'/Swef/SwefC
 define ( 'swefcms_file_option_item',                SWEF_DIR_PLUGIN.'/Swef/SwefCMS.o.item.html'         );
 define ( 'swefcms_file_option_markdown',            SWEF_DIR_PLUGIN.'/Swef/SwefCMS.o.markdown.html'     );
 
+
 ?>

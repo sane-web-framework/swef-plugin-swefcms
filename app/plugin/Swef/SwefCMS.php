@@ -620,4 +620,5 @@ class SwefCMS extends \Swef\Bespoke\Plugin {
 
 }
 
+
 ?>
