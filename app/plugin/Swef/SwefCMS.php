@@ -282,7 +282,8 @@ class SwefCMS extends \Swef\Bespoke\Plugin {
             return SWEF_BOOL_TRUE;
         }
         $this->collections  = $this->page->swef->lookupLoad (
-            swefcms_collections_lookup
+            swefcms_vendor
+           ,swefcms_collections_lookup
            ,swefcms_call_collections
            ,$this->page->swef->context[SWEF_COL_LANGUAGE]
         );

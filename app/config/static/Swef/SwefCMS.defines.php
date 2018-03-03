@@ -90,6 +90,7 @@ define ( 'swefcms_collections_lookup',              'swefcms-collections'       
 define ( 'swefcms_dashboard_options_valid',         array ( '', 'collections', 'collection', 'collectionCreate', 'inspect', 'itemEdit', 'items', 'item', 'itemCreate', 'markdown' ) );
 // Options for direct user selection
 define ( 'swefcms_dashboard_options_select',        array ( ''=>'SwefCMS Options:', 'collections'=>'View all collections', 'markdown'=>'Editor', 'inspect'=>'Inspect plugin properties' ) );
+define ( 'swefcms_vendor',                          SWEF_VENDOR_SWEF                                    );
 
 // Files
 define ( 'swefcms_file_dash',                       SWEF_DIR_PLUGIN.'/Swef/SwefCMS.dash.html'           );
