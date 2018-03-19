@@ -311,10 +311,11 @@ class SwefCMS extends \Swef\Bespoke\Plugin {
 
     public function dashboardLoad ( ) {
         $this->collectionsLoad ();
-        $this->dashboardOption      = $this->page->_GET (SWEF_GET_OPTION);
-        if (!in_array($this->dashboardOption,swefcms_dashboard_options_valid)) {
-            $this->dashboardOption  =  SWEF_STR__EMPTY;
+        $option = $this->page->_GET (SWEF_GET_OPTION);
+        if (!in_array($option,swefcms_dashboard_options_valid)) {
+            $option  =  SWEF_STR__EMPTY;
         }
+        return $option;
     }
 
     public function dashboardOption ($option) {
