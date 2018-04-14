@@ -17,7 +17,7 @@
 
 <?php else: ?>
 
-      <input type="hidden" name="item_uuid" value="<?php echo htmlentities($this->item[swefcms_col_item_uuid]); ?>" />
+      <input type="hidden" name="item_uuid" value="<?php echo htmlspecialchars($this->item[swefcms_col_item_uuid]); ?>" />
 
       <div class="toolbar">
 
@@ -34,11 +34,11 @@
           <select id="swef-cms-select-language">
 <?php foreach($this->markdown[SWEF_COL_LANGUAGES] as $lng): ?>
 
-            <option value="?c=\Swef\SwefCMS&amp;o=markdown&amp;u=<?php echo htmlentities($_GET[swefcms_get_uuid]); ?>&amp;l=<?php echo htmlentities ($lng); ?>"
+            <option value="?c=\Swef\SwefCMS&amp;o=markdown&amp;u=<?php echo htmlspecialchars($_GET[swefcms_get_uuid]); ?>&amp;l=<?php echo htmlspecialchars ($lng); ?>"
 <?php if($lng==$this->markdown[SWEF_COL_LANGUAGE]): ?>
               selected="selected"
 <?php endif; ?>
-            ><?php echo htmlentities ($lng); ?></option>
+            ><?php echo htmlspecialchars ($lng); ?></option>
 <?php endforeach; ?>
 
           </select>
@@ -46,22 +46,22 @@
           <select id="swef-cms-select-version">
 <?php foreach($this->markdown[swefcms_col_versions] as $vn): ?>
 
-            <option value="?c=\Swef\SwefCMS&amp;o=markdown&amp;u=<?php echo htmlentities($_GET[swefcms_get_uuid]); ?>&amp;l=<?php echo htmlentities ($_GET[swefcms_get_language]); ?>); ?>&amp;v=<?php echo htmlentities ($vn); ?>"
+            <option value="?c=\Swef\SwefCMS&amp;o=markdown&amp;u=<?php echo htmlspecialchars($_GET[swefcms_get_uuid]); ?>&amp;l=<?php echo htmlspecialchars ($_GET[swefcms_get_language]); ?>); ?>&amp;v=<?php echo htmlspecialchars ($vn); ?>"
 <?php if($vn==$this->markdown[swefcms_col_version]): ?>
               selected="selected"
 <?php endif; ?>
-            ><t en>Version</t> <?php echo htmlentities ($vn); ?></option>
+            ><t en>Version</t> <?php echo htmlspecialchars ($vn); ?></option>
 <?php endforeach; ?>
 
           </select>
 
           <input type="submit" id="swefcms-markdown-save" class="button" name="swefcms-markdown-save" value="<t en>Save</t>" />
 
-          <a class="button" href="?c=\Swef\SwefCMS&amp;o=itemImport&u=<?php echo htmlentities($_GET[swefcms_get_uuid]); ?>"><t en>Import</t></a>
+          <a class="button" href="?c=\Swef\SwefCMS&amp;o=itemImport&u=<?php echo htmlspecialchars($_GET[swefcms_get_uuid]); ?>"><t en>Import</t></a>
 
-          <a class="button" href="?c=\Swef\SwefCMS&amp;o=itemImport&u=<?php echo htmlentities($_GET[swefcms_get_uuid]); ?>"><t en>Export</t></a>
+          <a class="button" href="?c=\Swef\SwefCMS&amp;o=itemImport&u=<?php echo htmlspecialchars($_GET[swefcms_get_uuid]); ?>"><t en>Export</t></a>
 
-          <a class="button" href="?c=\Swef\SwefCMS&amp;o=item&u=<?php echo htmlentities($_GET[swefcms_get_uuid]); ?>"><t en>Quit</t></a>
+          <a class="button" href="?c=\Swef\SwefCMS&amp;o=item&u=<?php echo htmlspecialchars($_GET[swefcms_get_uuid]); ?>"><t en>Quit</t></a>
 
         </span>
 
@@ -80,7 +80,7 @@
       <input id="swefcms-title-input"
         name="swefcms-title"
         type="text"
-        value="<?php echo htmlentities ($this->markdown[swefcms_col_title]); ?>"
+        value="<?php echo htmlspecialchars ($this->markdown[swefcms_col_title]); ?>"
 <?php if($this->markdown[swefcms_col_editor_uuid]!=$this->page->swef->user->uuid): ?>
 
         disabled="disabled"
@@ -98,12 +98,12 @@
           disabled="disabled"
 <?php endif; ?>
 
-        ><?php echo htmlentities ($this->markdown[swefcms_col_markdown]); ?><?php print_r($this->markdown); ?></textarea>
+        ><?php echo htmlspecialchars ($this->markdown[swefcms_col_markdown]); ?><?php print_r($this->markdown); ?></textarea>
 
       </div>
 
 
-      <h1 id="swefcms-title"><?php echo htmlentities ($this->markdown[swefcms_col_title]); ?></h1>
+      <h1 id="swefcms-title"><?php echo htmlspecialchars ($this->markdown[swefcms_col_title]); ?></h1>
 
       <div id="swefcms-markup"></div>
 

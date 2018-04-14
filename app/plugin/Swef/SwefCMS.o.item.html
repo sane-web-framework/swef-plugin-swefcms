@@ -5,20 +5,20 @@
 <?php     $m = $this->markdown; ?>
 
   <form id="swefcms-form-item" method="post" action="">
-  <input type="hidden" name="<?php echo swefcms_col_item_uuid; ?>" value="<?php echo htmlentities($i[swefcms_col_item_uuid]); ?>" />
-  <input type="hidden" name="<?php echo swefcms_col_order; ?>" value="<?php echo htmlentities($i[swefcms_col_order]); ?>" />
+  <input type="hidden" name="<?php echo swefcms_col_item_uuid; ?>" value="<?php echo htmlspecialchars($i[swefcms_col_item_uuid]); ?>" />
+  <input type="hidden" name="<?php echo swefcms_col_order; ?>" value="<?php echo htmlspecialchars($i[swefcms_col_order]); ?>" />
 
     <div class="input">
       <label for="">Collection:</label>
 <?php     if($i[swefcms_col_is_collection]): ?>
-      <strong>[<a href="?c=\Swef\SwefCMS&o=collection&amp;u=<?php echo htmlentities ($i[swefcms_col_item_uuid]); ?>"><t en>edit collection</t></a>]</strong>
+      <strong>[<a href="?c=\Swef\SwefCMS&o=collection&amp;u=<?php echo htmlspecialchars ($i[swefcms_col_item_uuid]); ?>"><t en>edit collection</t></a>]</strong>
 
 <?php     elseif($i[swefcms_col_item_uuid]): ?>
 
-      <a href="?c=\Swef\SwefCMS&amp;o=collection&amp;u=<?php echo htmlentities ($i[swefcms_col_collection][swefcms_col_item_uuid]); ?>"><?php echo htmlentities ($i[swefcms_col_collection][swefcms_col_title]); ?></a>
+      <a href="?c=\Swef\SwefCMS&amp;o=collection&amp;u=<?php echo htmlspecialchars ($i[swefcms_col_collection][swefcms_col_item_uuid]); ?>"><?php echo htmlspecialchars ($i[swefcms_col_collection][swefcms_col_title]); ?></a>
 <?php     else: ?>
 
-      <a href="?c=\Swef\SwefCMS&amp;o=collections"><?php echo htmlentities ($i[swefcms_col_collection][swefcms_col_title]); ?></a>
+      <a href="?c=\Swef\SwefCMS&amp;o=collections"><?php echo htmlspecialchars ($i[swefcms_col_collection][swefcms_col_title]); ?></a>
 <?php     endif; ?>
 
     </div>
@@ -27,10 +27,10 @@
 <?php     if($i[swefcms_col_item_uuid]): ?>
 <?php         if($i[swefcms_col_mother_uuid]): ?>
 
-      <a href="?c=\Swef\SwefCMS&amp;o=item&amp;u=<?php echo htmlentities ($i[swefcms_col_mother_uuid]); ?>"><?php echo htmlentities ($i[swefcms_col_mother][swefcms_col_markdowns][SWEF_INT_0][swefcms_col_title]); ?></a>
+      <a href="?c=\Swef\SwefCMS&amp;o=item&amp;u=<?php echo htmlspecialchars ($i[swefcms_col_mother_uuid]); ?>"><?php echo htmlspecialchars ($i[swefcms_col_mother][swefcms_col_markdowns][SWEF_INT_0][swefcms_col_title]); ?></a>
 <?php         else: ?>
 
-      <a href="?c=\Swef\SwefCMS&amp;o=collections"><?php echo htmlentities ($i[swefcms_col_mother][swefcms_col_markdowns][SWEF_INT_0][swefcms_col_title]); ?></a>
+      <a href="?c=\Swef\SwefCMS&amp;o=collections"><?php echo htmlspecialchars ($i[swefcms_col_mother][swefcms_col_markdowns][SWEF_INT_0][swefcms_col_title]); ?></a>
 <?php             endif; ?>
 <?php     else: ?>
 
@@ -42,7 +42,7 @@
       <label for="">ID:</label>
 <?php     if($i[swefcms_col_item_uuid]): ?>
 
-      <span><?php echo htmlentities ($this->item[swefcms_col_item_uuid]); ?></span>
+      <span><?php echo htmlspecialchars ($this->item[swefcms_col_item_uuid]); ?></span>
 <?php     else: ?>
 
       <span class="inactive"><t en>Not applicable</t></span>
@@ -51,12 +51,12 @@
     </div>
     <div class="input">
       <label for="">Title:</label>
-      <span id="swefcms-item-title"><?php echo htmlentities ($i[swefcms_col_markdowns][SWEF_INT_0][swefcms_col_title]); ?></span>
+      <span id="swefcms-item-title"><?php echo htmlspecialchars ($i[swefcms_col_markdowns][SWEF_INT_0][swefcms_col_title]); ?></span>
     </div>
     <div class="input">
       <label for="">Active:</label>
       <input type="checkbox"
-        name="<?php echo htmlentities (swefcms_col_active); ?>"
+        name="<?php echo htmlspecialchars (swefcms_col_active); ?>"
         value="1"
 <?php     if($i[swefcms_col_active]): ?>
         checked="checked"
@@ -106,19 +106,19 @@
       </div>
       <div class="input">
         <label for="">Created:</label>
-        <span><?php echo htmlentities ($i[swefcms_col_created]); ?></span>
+        <span><?php echo htmlspecialchars ($i[swefcms_col_created]); ?></span>
       </div>
       <div class="input">
         <label for="">Created by:</label>
-        <span><?php echo htmlentities ($i[swefcms_col_creator]); ?></span>
+        <span><?php echo htmlspecialchars ($i[swefcms_col_creator]); ?></span>
       </div>
       <div class="input">
         <label for="">Updated:</label>
-        <span><?php echo htmlentities ($i[swefcms_col_updated]); ?></span>
+        <span><?php echo htmlspecialchars ($i[swefcms_col_updated]); ?></span>
       </div>
       <div class="input">
         <label for="">Updated by:</label>
-        <span><?php echo htmlentities ($i[swefcms_col_updater]); ?></span>
+        <span><?php echo htmlspecialchars ($i[swefcms_col_updater]); ?></span>
       </div>
     </details>
 
@@ -126,7 +126,7 @@
       <label for="">Related items:</label>
 <?php     if($i[swefcms_col_item_uuid]): ?>
 
-        <a class="button" href="?c=\Swef\SwefCMS&amp;o=relationCreate&amp;u=<?php echo htmlentities ($i[swefcms_col_item_uuid]); ?>"><t en>New relation</t></a>
+        <a class="button" href="?c=\Swef\SwefCMS&amp;o=relationCreate&amp;u=<?php echo htmlspecialchars ($i[swefcms_col_item_uuid]); ?>"><t en>New relation</t></a>
 
 <?php     else: ?>
 
@@ -138,19 +138,19 @@
 
     <div class="input">
       <label for="">&nbsp;</label>
-      <a href="?c=\Swef\SwefCMS&amp;o=item&amp;u=<?php echo htmlentities ($c[swefcms_col_item_uuid]); ?>"><em><?php echo htmlentities($c[swefcms_col_title]); ?></em></a>
+      <a href="?c=\Swef\SwefCMS&amp;o=item&amp;u=<?php echo htmlspecialchars ($c[swefcms_col_item_uuid]); ?>"><em><?php echo htmlspecialchars($c[swefcms_col_title]); ?></em></a>
     </div>
 <?php     endforeach; ?>
 
     <div class="input">
-      <pre name="swefcms-markdown" class="swefcms-markdown-preview"><?php echo htmlentities (substr($m[swefcms_col_markdown],SWEF_INT_0,swefcms_markdown_preview_chars)); ?>...</pre>
+      <pre name="swefcms-markdown" class="swefcms-markdown-preview"><?php echo htmlspecialchars (substr($m[swefcms_col_markdown],SWEF_INT_0,swefcms_markdown_preview_chars)); ?>...</pre>
     </div>
 
     <div class="input">
       <label for="">Children:</label>
 <?php     if($i[swefcms_col_item_uuid]): ?>
 
-      <a class="button" href="?c=\Swef\SwefCMS&amp;o=childCreate&amp;u=<?php echo htmlentities ($i[swefcms_col_item_uuid]); ?>"><t en>New child</t></a>
+      <a class="button" href="?c=\Swef\SwefCMS&amp;o=childCreate&amp;u=<?php echo htmlspecialchars ($i[swefcms_col_item_uuid]); ?>"><t en>New child</t></a>
 <?php     else: ?>
 
       <a class="button" href="?c=\Swef\SwefCMS&amp;o=collectionCreate); ?>"><t en>New collection</t></a>
@@ -160,7 +160,7 @@
 <?php     foreach($i[swefcms_col_children] as $c): ?>
     <div class="input">
       <label for="">&nbsp;</label>
-      <a href="?c=\Swef\SwefCMS&amp;o=item&amp;u=<?php echo htmlentities ($c[swefcms_col_item_uuid]); ?>"><?php echo htmlentities($c[swefcms_col_title]); ?></a>
+      <a href="?c=\Swef\SwefCMS&amp;o=item&amp;u=<?php echo htmlspecialchars ($c[swefcms_col_item_uuid]); ?>"><?php echo htmlspecialchars($c[swefcms_col_title]); ?></a>
     </div>
 
 <?php     endforeach; ?>
@@ -180,25 +180,25 @@
 
         <tr>
           <td>
-            <?php echo htmlentities ($md[SWEF_COL_LANGUAGE]); ?>
+            <?php echo htmlspecialchars ($md[SWEF_COL_LANGUAGE]); ?>
           </td>
           <td class="center">
-            <?php echo htmlentities ($md[swefcms_col_version]); ?>
+            <?php echo htmlspecialchars ($md[swefcms_col_version]); ?>
           </td>
           <td>
-            <?php echo htmlentities ($md[swefcms_col_title]); ?>
+            <?php echo htmlspecialchars ($md[swefcms_col_title]); ?>
           </td>
           <td>
-            <?php echo htmlentities ($md[swefcms_col_created]); ?>
+            <?php echo htmlspecialchars ($md[swefcms_col_created]); ?>
           </td>
           <td class="right button">
 <?php         if($i[swefcms_col_collection][swefcms_col_may_update]): ?>
 
-            <a class="button" href="?c=\Swef\SwefCMS&amp;o=markdown&amp;u=<?php echo htmlentities ($i[swefcms_col_item_uuid]); ?>&amp;l=<?php echo htmlentities ($md[SWEF_COL_LANGUAGE]); ?>"><t en>Edit</t></a>
+            <a class="button" href="?c=\Swef\SwefCMS&amp;o=markdown&amp;u=<?php echo htmlspecialchars ($i[swefcms_col_item_uuid]); ?>&amp;l=<?php echo htmlspecialchars ($md[SWEF_COL_LANGUAGE]); ?>"><t en>Edit</t></a>
 <?php         else: ?>
 
 <!--            <button disabled="disabled" class="link"><t en>Edit</t></button>-->
-            <a class="button" href="?c=\Swef\SwefCMS&amp;o=markdown&amp;u=<?php echo htmlentities ($i[swefcms_col_item_uuid]); ?>&amp;l=<?php echo htmlentities ($md[SWEF_COL_LANGUAGE]); ?>"><t en>Edit</t></a>
+            <a class="button" href="?c=\Swef\SwefCMS&amp;o=markdown&amp;u=<?php echo htmlspecialchars ($i[swefcms_col_item_uuid]); ?>&amp;l=<?php echo htmlspecialchars ($md[SWEF_COL_LANGUAGE]); ?>"><t en>Edit</t></a>
 <?php         endif; ?>
 
           </td>

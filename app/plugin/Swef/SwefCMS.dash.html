@@ -8,9 +8,9 @@
   <h2><t en>Dashboard for SwefCMS</t></h2>
 
   <form class="options" method="get" action="">
-    <input type="hidden" name="<?php echo htmlentities (SWEF_GET_CLASSNAME); ?>" value="\Swef\SwefCMS" />
-    <input type="hidden" name="<?php echo htmlentities (swefcms_get_uuid); ?>" value="<?php echo htmlentities ($this->page->_GET(swefcms_get_uuid)); ?>"/>
-    <input type="hidden" name="<?php echo htmlentities (swefcms_get_language); ?>" value="<?php echo htmlentities ($this->page->_GET(swefcms_get_language)); ?>" />
+    <input type="hidden" name="<?php echo htmlspecialchars (SWEF_GET_CLASSNAME); ?>" value="\Swef\SwefCMS" />
+    <input type="hidden" name="<?php echo htmlspecialchars (swefcms_get_uuid); ?>" value="<?php echo htmlspecialchars ($this->page->_GET(swefcms_get_uuid)); ?>"/>
+    <input type="hidden" name="<?php echo htmlspecialchars (swefcms_get_language); ?>" value="<?php echo htmlspecialchars ($this->page->_GET(swefcms_get_language)); ?>" />
 <?php $this->page->pull ('global.form.select.auto_submit',SWEF_GET_OPTION,$option,'options',$select,'language','en'); ?>
   </form>
 

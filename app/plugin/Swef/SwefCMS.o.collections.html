@@ -13,29 +13,29 @@
 <?php     foreach($collections as $c): ?>
       <tr>
         <td>
-          <?php echo htmlentities ($c[swefcms_col_created]); ?>
+          <?php echo htmlspecialchars ($c[swefcms_col_created]); ?>
 <?php         if($c[swefcms_col_creator]): ?>
 
-          (<?php echo htmlentities ($c[swefcms_col_creator]); ?>)
+          (<?php echo htmlspecialchars ($c[swefcms_col_creator]); ?>)
 <?php         endif; ?>
 
         </td>
         <td>
-          <?php echo htmlentities ($c[swefcms_col_updated]); ?>
+          <?php echo htmlspecialchars ($c[swefcms_col_updated]); ?>
 <?php         if($c[swefcms_col_updater]): ?>
 
-          (<?php echo htmlentities ($c[swefcms_col_updater]); ?>)
+          (<?php echo htmlspecialchars ($c[swefcms_col_updater]); ?>)
 <?php         endif; ?>
 
         </td>
         <td>
-          <?php echo htmlentities ($c[SWEF_COL_LANGUAGES]); ?>
+          <?php echo htmlspecialchars ($c[SWEF_COL_LANGUAGES]); ?>
         </td>
         <td>
-          <?php echo htmlentities (implode(SWEF_STR__COMMA,$c[SWEF_COL_USERGROUPS])); ?>
+          <?php echo htmlspecialchars (implode(SWEF_STR__COMMA,$c[SWEF_COL_USERGROUPS])); ?>
         </td>
         <td>
-          <a href="?c=\Swef\SwefCMS&amp;o=collection&amp;u=<?php echo htmlentities ($c[swefcms_col_item_uuid]); ?>"><?php echo htmlentities ($c[swefcms_col_title]); ?></a>
+          <a href="?c=\Swef\SwefCMS&amp;o=collection&amp;u=<?php echo htmlspecialchars ($c[swefcms_col_item_uuid]); ?>"><?php echo htmlspecialchars ($c[swefcms_col_title]); ?></a>
         </td>
       </tr>
 <?php     endforeach; ?>

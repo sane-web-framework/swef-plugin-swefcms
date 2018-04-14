@@ -6,17 +6,17 @@
     <input type="hidden" name="swefcms-collection" value="1" />
 
     <h3>
-      <?php echo htmlentities ($collection[swefcms_col_title]); ?>
-      [<a href="?c=\Swef\SwefCMS&amp;o=item&amp;u=<?php echo htmlentities ($_GET[swefcms_get_uuid]); ?>"><t en>edit items</t></a>]
+      <?php echo htmlspecialchars ($collection[swefcms_col_title]); ?>
+      [<a href="?c=\Swef\SwefCMS&amp;o=item&amp;u=<?php echo htmlspecialchars ($_GET[swefcms_get_uuid]); ?>"><t en>edit items</t></a>]
     </h3>
 
     <div class="input">
       <label for=""><t en>Created</t>:</label>
-      <span><?php echo htmlentities ($collection[swefcms_col_created]); ?></span>
+      <span><?php echo htmlspecialchars ($collection[swefcms_col_created]); ?></span>
     </div>
     <div class="input">
       <label for=""><t en>Created by</t>:</label>
-      <span><?php echo htmlentities ($collection[swefcms_col_creator]); ?></span>
+      <span><?php echo htmlspecialchars ($collection[swefcms_col_creator]); ?></span>
     </div>
     <div class="input">
       <label for=""><t en>Status</t>:</label>
@@ -42,14 +42,14 @@
 <?php     foreach ($collections as $coll): ?>
         <tr>
           <td>
-            <?php echo htmlentities ($coll[SWEF_COL_CONTEXT]); ?>
+            <?php echo htmlspecialchars ($coll[SWEF_COL_CONTEXT]); ?>
           </td>
           <td>
-            <?php echo htmlentities ($coll[SWEF_COL_USERGROUP]); ?>
+            <?php echo htmlspecialchars ($coll[SWEF_COL_USERGROUP]); ?>
           </td>
           <td>
             <input type="checkbox"
-              name="swefcms-may-create-<?php echo htmlentities ($coll[swefcms_col_item_uuid]); ?>"
+              name="swefcms-may-create-<?php echo htmlspecialchars ($coll[swefcms_col_item_uuid]); ?>"
               value="1"
 <?php         if($coll[swefcms_col_may_create]): ?>
               checked="checked"
@@ -60,7 +60,7 @@
           </td>
           <td>
             <input type="checkbox"
-              name="swefcms-may-update-<?php echo htmlentities ($coll[swefcms_col_item_uuid]); ?>"
+              name="swefcms-may-update-<?php echo htmlspecialchars ($coll[swefcms_col_item_uuid]); ?>"
               value="1"
 <?php         if($coll[swefcms_col_may_update]): ?>
               checked="checked"
@@ -71,7 +71,7 @@
           </td>
           <td>
             <input type="checkbox"
-              name="swefcms-may-delete-<?php echo htmlentities ($coll[swefcms_col_item_uuid]); ?>"
+              name="swefcms-may-delete-<?php echo htmlspecialchars ($coll[swefcms_col_item_uuid]); ?>"
               value="1"
 <?php         if($coll[swefcms_col_may_delete]): ?>
               checked="checked"
@@ -99,7 +99,7 @@
               >
               <option value="">Context:</option>
 <?php         foreach($this->page->swef->contexts as $c): ?>
-              <option value="<?php echo htmlentities (SWEF_COL_USERGROUP); ?>"><?php echo htmlentities ($c[SWEF_COL_CONTEXT]); ?></option>
+              <option value="<?php echo htmlspecialchars (SWEF_COL_USERGROUP); ?>"><?php echo htmlspecialchars ($c[SWEF_COL_CONTEXT]); ?></option>
 <?php         endforeach; ?>
             </select>
           </td>
@@ -110,7 +110,7 @@
               >
               <option value=""><t en>User group</t>:</option>
 <?php         foreach($this->page->swef->usergroups as $u): ?>
-              <option value="<?php echo htmlentities ($u[SWEF_COL_USERGROUP]); ?>"><t en><?php echo htmlentities ($u[SWEF_COL_USERGROUP_NAME]); ?></t></option>
+              <option value="<?php echo htmlspecialchars ($u[SWEF_COL_USERGROUP]); ?>"><t en><?php echo htmlspecialchars ($u[SWEF_COL_USERGROUP_NAME]); ?></t></option>
 <?php         endforeach; ?>
             </select>
           </td>
